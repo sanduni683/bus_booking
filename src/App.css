@@ -1,33 +1,190 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainContainer{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  height: 60px;
+  justify-content: space-between; /* move logo and navBar to edge of each end */
+}
+
+.logo{
+  margin-left : 80px;
+  background-color: red;
+}
+
+.koombiyo-logo{
+  height: 60px;
+  width: 180px;
+}
+
+.navBar{
+  display: flex;
+  flex-direction: row;
+  margin-right : 80px; 
+}
+
+a {
   color: white;
+  padding: 9px 36px;
+  text-align: center;
+  text-decoration: none;
+  align-self: center; /* since this is flex item can use align-self: */ 
 }
 
-.App-link {
-  color: #61dafb;
+/*show current link to let the user know which page he/she is on */
+a.active {
+  color: gold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Change the link color on hover(not for active link) */
+a:hover:not(.active) {
+  color: gold;
+}
+
+.blur_background{
+   /* The background image used and this is in bottom layer*/
+  background-image: url("./images/koombiyo_background.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute; 
+  background-size: 100% 100%;
+  /* Add the blur effect */
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  z-index: -1; /* change the layer */
+}
+
+.first_middle_content{
+  display: flex;
+  justify-content: flex-end;
+  margin-right : 80px; 
+  margin-top: 50px;
+}
+
+/* booking_form in the middle of the first_middle_content/page */
+.booking_form {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  width: 40%;
+  padding: 40px;
+  text-align: left;
+}
+
+/* Change the form color on hover */
+.booking_form:hover {
+  background-color: rgba(0,0,0, 0.85); /* Black w/opacity/see-through */
+}
+
+.book_now_pulse{
+   border-radius: 50%; /* to create rounded images */
+   /* just make the image in middle- not proper */
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: -80px; /* just make the image inbetween form lines - not proper*/
+   animation: pulse 1s infinite;
+   animation-fill-mode: both;
+}
+
+@keyframes pulse {
+  /* speed of the animation different from 0.05 start to finish*/
+  from { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+.book_now_pulse:hover {
+  animation: none; /* when hover, no animation */
+}
+
+select {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+  margin-top: 10px;
+}
+
+select:focus {
+  border-bottom: 2px solid gold;
+}
+
+label {
+  color: gold;
+
+}
+
+input {
+  width: 100%;
+  /*box-sizing: border-box; */
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+    margin-top: 10px;
+
+}
+
+input:focus {
+  border-bottom: 2px solid gold;
+}
+
+input[type=submit]{
+  background-color:  #ffbf00;
+  color: white;
+  width: 30%;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  justify-content:center;
+
+}
+
+.form_input_submit{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.form_input_startLastDate{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+
+.form_input_passengersTime{
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+
+.form_input_small{
+  width: 40%;
+  margin-top: 10px;
+}
+
+.form_input_main{
+  margin-top: 20px;
 }
