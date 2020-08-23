@@ -1,4 +1,4 @@
-this is the readme file. 
+this is the readme file for project reference. 
 
 run the frontend with command 'npm run start'
 backend code still pending 'sbt run'
