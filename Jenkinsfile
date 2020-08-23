@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'mvn --version'
                 echo 'This will run only if successful'
             }
         }
