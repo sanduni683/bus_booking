@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './images/Koombiyo_logo_small.jpg'
 import book_now from './images/book_now.png'
-import './App.css';
+import './App.css'
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
+
 
 function App() {
 
@@ -23,6 +26,11 @@ function App() {
         {/* div at the bottom layer (for blur Background there should be a another layer) */}
         <div className="blur_background" />
         <div className="first_middle_content">
+          <div>
+            <Calendar
+              value={new Date()}
+            />
+          </div>
 
           <div className="booking_form">
 
